@@ -1,7 +1,8 @@
-FROM ruby:2.6.1
+FROM ruby:2.5.3
 
 RUN mkdir /app
 WORKDIR /app
-ADD Gemfile Gemfile.lock /app/
-RUN bundle install -j 8
 ADD . /app
+RUN gem install bundler && gem update bundler
+RUN bundle install
+# RUN foreman start
