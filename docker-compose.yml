@@ -1,14 +1,31 @@
 version: "3"
 services:
+  db:
+    restart: always
+    image: postgres:10.6
+    ports:
+      - 2345:5432
+    environment:
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=test
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
   web:
-    build: .
+    build: ./web
     ports:
       - "9876:5000"
     environment:
       LANG: "C.UTF-8"
       LC_ALL: "C.UTF-8"
       TZ: "Europe/Madrid"
+      DATABASE_HOST: db
+      DATABASE_NAME: sinatra
+      DATABASE_USER: sinatra
+      DATABASE_PASSWORD: sinatra
     volumes:
-      - .:/web
+      - ./web:/web
     working_dir: /web
     command: bash -c "bundle install && foreman start"
+volumes:
+  db_data:
+    external: true
