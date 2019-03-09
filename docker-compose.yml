@@ -1,27 +1,14 @@
-version: '3'
-
+version: "3"
 services:
-  db:
-    image: postgres:11.1
-    ports:
-      - 5432:5432
-    restart: always
-    environment:
-      - POSTGRES_PASSWORD=aibiao118
-      - POSTGRES_USER=gzswar
-    volumes:
-      - ./pg_db:/var/lib/postgresql/data
   web:
     build: .
     ports:
-      - 5000:5000
+      - "9876:5000"
     environment:
-      - POSTGRES_ROOT_PASSWORD=aibiao118
-      - POSTGRES_ROOT_USER=gzswar
-      - DATABASE_HOST=db
+      LANG: "C.UTF-8"
+      LC_ALL: "C.UTF-8"
+      TZ: "Europe/Madrid"
     volumes:
-      - .:/app
-    tty: true
-    depends_on:
-      - db
-      
+      - .:/web
+    working_dir: /web
+    command: bash -c "bundle install && foreman start"
