@@ -1,0 +1,8 @@
+{
+  "name": "biaot",
+  "version": "0.0.0",
+  "author": "vydiaz",
+  "scripts": {
+    "restart": "docker-compose down && docker-compose build && docker-compose up"
+  }
+}

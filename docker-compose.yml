@@ -6,8 +6,8 @@ services:
     ports:
       - 2345:5432
     environment:
-      - POSTGRES_USER=test
-      - POSTGRES_PASSWORD=test
+      - POSTGRES_USER=sinatra
+      - POSTGRES_PASSWORD=sinatra
     volumes:
       - ./db_data:/var/lib/postgresql/data
   web:

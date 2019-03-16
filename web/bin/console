@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+bin=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+. $bin/common
+
+initializer=$apps_path/$app/initialize.rb
+validate_file $initializer
+
+echo -e "Starting $app console..."
+
+REPL=true bundle exec pry $@ -r $initializer # append `-c exit` to exit immediately.
