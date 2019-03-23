@@ -1,0 +1,15 @@
+{
+  "name": "biaot",
+  "version": "0.0.0",
+  "author": "vydiaz",
+  "scripts": {
+    "?restart": "??? not working now. need to fix this. Trying to restart the docker compose here.",
+    "restart": "docker-compose down && docker-compose build && docker-compose up",
+    "?docker-exec": "Execute a command inside docker.  Example: yarn docker-exec \"rake graphql:update_schema\"",
+    "docker-exec": "docker-compose exec web sh -c",
+    "?docker-ssh": "Enter web docker container bash shell",
+    "docker-ssh": "docker-compose exec web sh",
+    "?console": "Shortcut for starting the Ruby console.",
+    "console": "yarn docker-exec \"bin/console\""
+  }
+}

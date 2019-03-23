@@ -9,23 +9,21 @@ services:
       - POSTGRES_USER=sinatra
       - POSTGRES_PASSWORD=sinatra
     volumes:
-      - ./web/bt_data:/var/lib/postgresql/data
+      - ./web/bt_data:/var/lib/postgres
   web:
     build: ./web
     ports:
       - "9876:5000"
     environment:
-      LANG: "C.UTF-8"
-      LC_ALL: "C.UTF-8"
-      TZ: "Europe/Madrid"
       DATABASE_HOST: db
       DATABASE_NAME: sinatra
       DATABASE_USER: sinatra
       DATABASE_PASSWORD: sinatra
+      DATABASE_PORT: 5432
     volumes:
       - ./web:/web
     working_dir: /web
-    command: bash -c "bundle install && foreman start"
+    command: bash -c "foreman start"
 volumes:
   bt_data:
     external: true
