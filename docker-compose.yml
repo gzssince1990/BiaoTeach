@@ -6,10 +6,10 @@ services:
     ports:
       - 2345:5432
     environment:
-      - POSTGRES_USER=test
-      - POSTGRES_PASSWORD=test
+      - POSTGRES_USER=sinatra
+      - POSTGRES_PASSWORD=sinatra
     volumes:
-      - ./db_data:/var/lib/postgresql/data
+      - ./web/bt_data:/var/lib/postgresql/data
   web:
     build: ./web
     ports:
@@ -27,5 +27,5 @@ services:
     working_dir: /web
     command: bash -c "bundle install && foreman start"
 volumes:
-  db_data:
+  bt_data:
     external: true
