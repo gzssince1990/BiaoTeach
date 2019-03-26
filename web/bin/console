@@ -4,4 +4,4 @@ bin=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 initializer=$bin/init.rb
 echo -e "Starting console..."
 
-pry $@ -r $initializer
+REPL=true bundle exec pry $@ -r $initializer

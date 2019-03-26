@@ -10,6 +10,8 @@
     "?docker-ssh": "Enter web docker container bash shell",
     "docker-ssh": "docker-compose exec web sh",
     "?console": "Shortcut for starting the Ruby console.",
-    "console": "yarn docker-exec \"bin/console\""
+    "console": "yarn docker-exec \"bin/console\"",
+    "?migrate": "DB migration. Just a simple version now.",
+    "migrate": "yarn docker-exec \"sequel -m migrations postgres://sinatra:sinatra@db/sinatra\""
   }
 }

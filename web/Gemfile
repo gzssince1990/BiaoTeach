@@ -1,12 +1,11 @@
-ruby '2.5.3'
 source 'https://rubygems.org'
 
 gem 'puma', '3.12.0'
 gem 'sinatra', '2.0.5'
-gem 'pg', '1.1.4'
-gem "sequel", "=4.38"
+gem "sequel", "=5.18.0"
 gem "sequel_pg", "=1.12.0", :require => 'sequel'
 gem "pry", "0.12.2 "
+gem "graphql", "=1.6.0"
 
 group :development do
   gem 'dotenv', '2.5.0'

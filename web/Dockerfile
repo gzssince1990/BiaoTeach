@@ -89,7 +89,7 @@ RUN git clone https://github.com/rbenv/ruby-build.git /usr/local/src/ruby-build 
 ###
 COPY Gemfile* /tmp/gemfiles/
 WORKDIR /tmp/gemfiles
-RUN gem install sequel_pg -v 1.12.0 -- --with-cflags="-DSPG_MAX_FIELDS=512"
+# RUN gem install sequel_pg -v 1.12.0 -- --with-cflags="-DSPG_MAX_FIELDS=512"
 RUN bundle install
 
 # A shared docker-compose volume provides node_modules and compiled assets.  They are left out intentionally
