@@ -92,7 +92,4 @@ WORKDIR /tmp/gemfiles
 # RUN gem install sequel_pg -v 1.12.0 -- --with-cflags="-DSPG_MAX_FIELDS=512"
 RUN bundle install
 
-# A shared docker-compose volume provides node_modules and compiled assets.  They are left out intentionally
-# to improve `yarn docker-build` times
-
-CMD bash
+WORKDIR /web

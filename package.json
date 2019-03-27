@@ -12,6 +12,8 @@
     "?console": "Shortcut for starting the Ruby console.",
     "console": "yarn docker-exec \"bin/console\"",
     "?migrate": "DB migration. Just a simple version now.",
-    "migrate": "yarn docker-exec \"sequel -m migrations postgres://sinatra:sinatra@db/sinatra\""
+    "migrate": "yarn docker-exec \"sequel -m migrations postgres://sinatra:sinatra@db/sinatra\"",
+    "?server": "web server by foreman for now.",
+    "server": "yarn docker-exec \"foreman start\""
   }
 }
