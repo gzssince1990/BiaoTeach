@@ -22,8 +22,7 @@ services:
       DATABASE_PORT: 5432
     volumes:
       - ./web:/web
-    working_dir: /web
-    command: bash -c "foreman start"
+    tty: true
 volumes:
   bt_data:
     external: true
