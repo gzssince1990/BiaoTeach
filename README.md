@@ -5,6 +5,11 @@ They could use that to manage their teaching event.
 We would make this easier and better, because not every musician is a technique guy.
 Expecting this project working out.
 
+# Setup
+1. yarn restart
+2. yarn migrate
+3. yarn console
+
 # TODO List
 1. Set up ruby gem env like gourami, sequel, graphql and whatever we need.
 2. Set up the initial database structure.
