@@ -17,5 +17,4 @@ Expecting this project working out.
 4. Set up deploy process.
 5. Test and improve.
 6. Make more scripts for easy setup and guide for init setup.
-7. Remove bt_data folder from repo.
-8. Move migrate script to source code so no exposure of db pass.
+7. Move migrate script to source code so no exposure of db pass.
