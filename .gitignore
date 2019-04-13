@@ -2,4 +2,4 @@
 .DS_Store
 
 .env
-web/bt_data
+bt_data
