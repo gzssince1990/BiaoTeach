@@ -1,4 +1,4 @@
-version: "3"
+version: "3.2"
 services:
   db:
     restart: always
@@ -9,7 +9,7 @@ services:
       - POSTGRES_USER=sinatra
       - POSTGRES_PASSWORD=sinatra
     volumes:
-      - ./web/bt_data:/var/lib/postgres
+      - ./bt_data:/var/lib/postgresql/data
   web:
     build: ./web
     ports:
@@ -23,6 +23,8 @@ services:
     volumes:
       - ./web:/web
     tty: true
+    depends_on:
+      - db
 volumes:
   bt_data:
     external: true
