@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'sinatra/reloader'
 require 'dotenv'
 require 'sequel'
 require_relative './init'
@@ -16,14 +17,15 @@ get '/' do
 	"For my best love - Biao"
 end
 
-get '/graphqltest' do
-	query_string = "
+get '/user/:id' do |id|
+	query_string = <<-GRAPHQL
 	{
-	user(id: 1) {
-		id
+		user(id: #{id}) {
+			id
+		}
 	}
-	}
-	"
+	GRAPHQL
+
 	result_hash = Schema.execute(query_string)
 	result_hash.to_s
 end

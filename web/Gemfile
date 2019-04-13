@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'puma', '3.12.0'
 gem 'sinatra', '2.0.5'
+gem 'sinatra-contrib'
 gem "sequel", "=5.18.0"
 gem "sequel_pg", "=1.12.0", :require => 'sequel'
 gem "pry", "0.12.2 "
